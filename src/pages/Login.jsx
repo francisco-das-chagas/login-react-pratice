@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Login = () => {
 
-  const [mostrarSenha, setMostrarSenha] = useState(true)
+  const [mostrarSenha, setMostrarSenha] = useState(false)
 
   return ( 
     <>
@@ -25,7 +25,10 @@ const Login = () => {
             
             <div className='mb-3'>
               <IconField>
-                <InputIcon className="pi pi-eye" />
+                <InputIcon
+                  className={`pi ${mostrarSenha ? `pi-eye` : `pi-eye-slash`}  cursor-pointer`}
+                  onClick={() => setMostrarSenha(!mostrarSenha)}
+                />
                 <InputText
                   id='senha'
                   type={ mostrarSenha ? 'text' : 'password'}
