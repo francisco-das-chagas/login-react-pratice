@@ -3,8 +3,12 @@ import { IconField } from 'primereact/iconfield';
 import { InputIcon } from 'primereact/inputicon';
 import { Button } from 'primereact/button';
 import "primereact/resources/themes/soho-light/theme.css"
+import { useState } from 'react';
 
 const Login = () => {
+
+  const [mostrarSenha, setMostrarSenha] = useState(true)
+
   return ( 
     <>
       <div className='bg-primary-800 h-screen flex align-items-center justify-content-center px-3'>
@@ -24,6 +28,7 @@ const Login = () => {
                 <InputIcon className="pi pi-eye" />
                 <InputText
                   id='senha'
+                  type={ mostrarSenha ? 'text' : 'password'}
                   placeholder='********'
                   className='w-full'
                 />
